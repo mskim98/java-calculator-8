@@ -11,6 +11,6 @@ public class Application {
 
         StringValidator validator = new StringValidator();
 
-        validator.validate(input);
+        System.out.println("결과 : " + validator.validate(input));
     }
 }
