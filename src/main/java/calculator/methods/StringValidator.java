@@ -27,7 +27,14 @@ public class StringValidator {
         for (String s : numbers) {
             String trimmed = s.trim();
             if (!trimmed.isEmpty()) {
-                result += Integer.parseInt(trimmed);
+                int value = Integer.parseInt(trimmed);
+
+                //음수일 경우 예외 처리
+                if (value < 0) {
+                    throw new IllegalArgumentException("잘못된 입력");
+                }
+
+                result += value;
             }
         }
         return result;
